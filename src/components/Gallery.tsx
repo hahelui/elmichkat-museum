@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Gallery = ({ t }: { t: any }) => {
   const images = [
@@ -52,29 +53,27 @@ const Gallery = ({ t }: { t: any }) => {
   ];
 
   return (
-    <section className="mb-16">
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="bg-card/80 backdrop-blur rounded-lg shadow-sm border border-border p-8">
-          {/* Header */}
-          <div className="mb-8 space-y-4 text-center">
-            <h2 className="text-3xl font-semibold text-foreground">
-              <span className="relative z-1">
-                {t.galleryTitle}
-                <span className="bg-primary absolute bottom-1 left-0 -z-1 h-px w-full" aria-hidden="true"></span>
-              </span>{" "}
-              {t.gallerySubtitle}
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              {t.galleryDescription}
-            </p>
-          </div>
-
+    <section className="max-w-5xl mx-auto mb-16">
+      <Card className="bg-card/80 backdrop-blur border-border">
+        <CardHeader>
+          <CardTitle className="text-3xl text-center text-foreground">
+            <span className="relative z-1">
+              {t.galleryTitle}
+              <span className="bg-primary absolute bottom-1 left-0 -z-1 h-px w-full" aria-hidden="true"></span>
+            </span>{" "}
+            {t.gallerySubtitle}
+          </CardTitle>
+          <p className="text-muted-foreground text-lg text-center mt-2">
+            {t.galleryDescription}
+          </p>
+        </CardHeader>
+        <CardContent>
           {/* Hover Expand Gallery */}
           <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-muted/30 py-12">
             <HoverExpandGallery className="" images={images} />
           </div>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </section>
   );
 };

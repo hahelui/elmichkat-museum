@@ -10,10 +10,25 @@ import { translations, type Language } from '@/lib/translations'
 import { useTheme } from '@/hooks/useTheme'
 
 function App() {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>(() => {
+    // Check localStorage first
+    const savedLanguage = localStorage.getItem('language') as Language | null
+    if (savedLanguage && translations[savedLanguage]) {
+      return savedLanguage
+    }
+    // Default to Arabic
+    return 'ar'
+  })
+  
   const { theme, toggleTheme } = useTheme()
   const t = translations[language]
   const isRTL = language === 'ar'
+
+  // Save language preference when it changes
+  const handleLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage)
+    localStorage.setItem('language', newLanguage)
+  }
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -42,14 +57,14 @@ function App() {
               {/* Language Selector */}
               <div className="flex items-center gap-2">
                 <Globe className="h-5 w-5 text-muted-foreground" />
-                <Select value={language} onValueChange={(value) => setLanguage(value as Language)}>
+                <Select value={language} onValueChange={(value) => handleLanguageChange(value as Language)}>
                   <SelectTrigger className="w-[140px]">
                     <SelectValue placeholder="Language" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="en">English</SelectItem>
                     <SelectItem value="ar">العربية</SelectItem>
                     <SelectItem value="fr">Français</SelectItem>
+                    <SelectItem value="en">English</SelectItem>
                     <SelectItem value="es">Español</SelectItem>
                   </SelectContent>
                 </Select>
