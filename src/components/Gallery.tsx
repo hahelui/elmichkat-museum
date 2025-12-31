@@ -3,54 +3,16 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const Gallery = ({ t }: { t: any }) => {
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=800&h=800&fit=crop",
-      alt: "Vintage pottery collection",
-      code: "# 01",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&h=800&fit=crop",
-      alt: "Handwoven textiles",
-      code: "# 02",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=800&h=800&fit=crop",
-      alt: "Historical artifacts",
-      code: "# 03",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=800&fit=crop",
-      alt: "Handmade jewelry",
-      code: "# 04",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800&h=800&fit=crop",
-      alt: "Vintage books",
-      code: "# 05",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=800&fit=crop",
-      alt: "Decorative items",
-      code: "# 06",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1582582621959-48d27397dc69?w=800&h=800&fit=crop",
-      alt: "Antique furniture",
-      code: "# 07",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=800&fit=crop",
-      alt: "Traditional crafts",
-      code: "# 08",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=800&fit=crop",
-      alt: "Artisan goods",
-      code: "# 09",
-    },
-  ];
+const Gallery = ({ t }) => {
+  // We can programmatically generate the array if the structure is consistent
+  const images = Array.from({ length: 9 }, (_, i) => {
+    const id = i + 1;
+    return {
+      src: `/assets/${id}.jpg`, // Path relative to the public folder
+      alt: t(`gallery.alt.${id}`), // Assuming you have translations for alt text
+      code: `# ${id.toString().padStart(2, '0')}`,
+    };
+  });
 
   return (
     <section className="max-w-5xl mx-auto mb-16">
