@@ -72,8 +72,13 @@ function App() {
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <Globe className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground hidden sm:block" />
                 <Select value={language} onValueChange={(value) => handleLanguageChange(value as Language)}>
-                  <SelectTrigger className="w-[100px] sm:w-[140px] text-sm">
-                    <SelectValue placeholder="Language" />
+                  <SelectTrigger className="w-[70px] sm:w-[80px] text-sm">
+                    <SelectValue>
+                      {language === 'ar' && 'ع'}
+                      {language === 'fr' && 'Fr'}
+                      {language === 'en' && 'En'}
+                      {language === 'es' && 'Es'}
+                    </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="ar">العربية</SelectItem>
@@ -149,8 +154,12 @@ function App() {
                     <Phone className="h-5 w-5 text-muted-foreground mt-1 flex-shrink-0" />
                     <div className="min-w-0 flex-1">
                       <p className="font-semibold text-foreground text-sm sm:text-base">{t.phoneLabel}</p>
-                      <p className="text-muted-foreground text-sm sm:text-base">+222 27 87 77 99</p>
-                      <p className="text-muted-foreground text-sm sm:text-base">+222 42 04 16 64</p>
+                      <p className="text-muted-foreground text-sm sm:text-base" dir="ltr" style={{ textAlign: isRTL ? 'right' : 'left' }}>
+                        +222 27 87 77 99
+                      </p>
+                      <p className="text-muted-foreground text-sm sm:text-base" dir="ltr" style={{ textAlign: isRTL ? 'right' : 'left' }}>
+                        +222 42 04 16 64
+                      </p>
                     </div>
                   </div>
 
@@ -161,6 +170,8 @@ function App() {
                       <a 
                         href="https://wa.me/22227877799" 
                         className="text-green-600 dark:text-green-400 hover:underline text-sm sm:text-base break-all"
+                        dir="ltr"
+                        style={{ display: 'block', textAlign: isRTL ? 'right' : 'left' }}
                       >
                         +222 27 87 77 99
                       </a>
