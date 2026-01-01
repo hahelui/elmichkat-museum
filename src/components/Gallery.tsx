@@ -3,14 +3,14 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-interface TranslationType {
-  (key: string): string;
-  [key: string]: any;
-}
-
-
 interface GalleryProps {
-  t: TranslationType;
+  t: {
+    galleryTitle: string;
+    gallerySubtitle: string;
+    galleryDescription: string;
+    tapTo: string;
+    [key: string]: any;
+  };
   isRTL?: boolean;
 }
 
@@ -20,7 +20,7 @@ const Gallery = ({ t, isRTL = false }: GalleryProps) => {
     return {
       // Use new URL to resolve files from src/assets during build
       src: new URL(`../assets/${id}.jpg`, import.meta.url).href,
-      alt: typeof t === 'function' ? t(`gallery.alt.${id}`) : `Gallery image ${id}`,
+      alt: t[`gallery.alt.${id}`] || `Gallery image ${id}`,
       code: `# ${id.toString().padStart(2, '0')}`,
     };
   });
