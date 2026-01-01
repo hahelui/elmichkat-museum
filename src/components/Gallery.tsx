@@ -15,7 +15,7 @@ interface GalleryProps {
 }
 
 const Gallery = ({ t, isRTL = false }: GalleryProps) => {
-  const images = Array.from({ length: 12 }, (_, i) => {
+  const images = Array.from({ length: 11 }, (_, i) => {
     const id = i + 1;
     return {
       // Use new URL to resolve files from src/assets during build
