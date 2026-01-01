@@ -33,6 +33,7 @@ export const translations = {
     galleryTitle: "Explore our",
     gallerySubtitle: "Gallery",
     galleryDescription: "A glimpse into our collection - discover more amazing artifacts when you visit.",
+    tapTo: "Tap to view",
     
     // Contact Section
     contactTitle: "Contact Us",
@@ -55,19 +56,19 @@ export const translations = {
     siteNameArabic: "ELMICHKAT",
     
     // Hero Section
-    heroTitle: "متحف المشكاة للآثار و التراث",
+    heroTitle: "متحف المشكاة للآثار والتراث",
     heroSubtitle: "متحف للآثار والتراث",
     heroDescription: "اكتشف الكنوز القديمة واستكشف مجموعتنا الأثرية الرائعة",
     
     // Vision Section
     visionTitle: "رؤيتنا",
-    visionText: "لقد كنت مهتمة بجمع التحف والأدوات القديمة التي كان يستعملها أقوام في القدم وتعاكبت عليها حضارات بأمد ما قبل التاريخ من العصر الحجري (القديم والوسيط والمتأخر)، وكذلك العصر النحاسي والبرونزي والحديدي والعصور الوسطى والعصر الحديث. ولذلك سميته متحف المشكاة للآثار والتراث، لأنه عبارة عن كوة صغيرة بالنسبة للمتاحف الوطنية، راجياً من الله العلي القدير أن تكون له منفعة علمية ومعرفية. إن بلادنا غنية بالآثار القديمة وشواهدها في أماكن كثيرة (الكهوف وسفوح الجبال وحتى تحت الرمال، ويوجد في صحارينا كما هائلاً من الأدوات الحجرية والبرونزية) السهام والفؤوس والمكاشط وأدوات الزينة... موريتانيا يجب أن تكون في مقدمة الدول التي تمتلك الكنوز الأثرية وتجلب إليها العلماء والمتعلمين والسياح... مقولة «الأمة التي تحفظ تاريخها تحفظ ذاته».",
+    visionText: "لقد كنت مهتمة بجمع التحف والأدوات القديمة التي كان يستعملها أقوام في القدم، وتعاقبت عليها حضارات بأمد ما قبل التاريخ من العصر الحجري (القديم والوسيط والمتأخر)، وكذلك العصر النحاسي والبرونزي والحديدي، والعصور الوسطى والعصر الحديث. ولذلك سميته متحف المشكاة للآثار والتراث، لأنه عبارة عن كوة صغيرة بالنسبة للمتاحف الوطنية، راجية من الله العلي القدير أن تكون له منفعة علمية ومعرفية. إن بلادنا غنية بالآثار القديمة وشواهدها في أماكن كثيرة (الكهوف وسفوح الجبال وحتى تحت الرمال، ويوجد في صحارينا كم هائل من الأدوات الحجرية والبرونزية: السهام والفؤوس والمكاشط وأدوات الزينة...). موريتانيا يجب أن تكون في مقدمة الدول التي تمتلك الكنوز الأثرية وتجلب إليها العلماء والمتعلمين والسياح... مقولة «الأمة التي تحفظ تاريخها تحفظ ذاتها».",
     
     // Feature Cards
     shopTitle: "المتجر",
     shopDescription: "تصفح مجموعتنا المختارة من العناصر الفريدة",
     shopButton: "استكشف المتجر",
-    shopText: "اعثر على سلع مصنوعة يدويًا وكنوز عتيقة وهدايا خاصة.",
+    shopText: "اعثر على سلع مصنوعة يدوياً وكنوز عتيقة وهدايا خاصة.",
     
     museumTitle: "المتحف",
     museumDescription: "استكشف مجموعتنا التاريخية",
@@ -83,11 +84,12 @@ export const translations = {
     galleryTitle: "استكشف",
     gallerySubtitle: "معرضنا",
     galleryDescription: "لمحة من مجموعتنا - اكتشف المزيد من القطع الأثرية المذهلة عند زيارتك.",
+    tapTo: "انقر للعرض",
     
     // Contact Section
     contactTitle: "اتصل بنا",
     contactDescription: "تواصل معنا للاستفسارات والزيارات",
-    ownerLabel: "المالك",
+    ownerLabel: "المالكة",
     ownerName: "زينبو أحمد محمود",
     phoneLabel: "الهاتف",
     whatsappLabel: "واتساب",
@@ -133,6 +135,7 @@ export const translations = {
     galleryTitle: "Explorez notre",
     gallerySubtitle: "Galerie",
     galleryDescription: "Un aperçu de notre collection - découvrez plus d'artefacts incroyables lors de votre visite.",
+    tapTo: "Appuyer pour voir",
     
     // Contact Section
     contactTitle: "Contactez-Nous",
@@ -183,6 +186,7 @@ export const translations = {
     galleryTitle: "Explora nuestra",
     gallerySubtitle: "Galería",
     galleryDescription: "Un vistazo a nuestra colección - descubre más artefactos increíbles cuando nos visites.",
+    tapTo: "Toca para ver",
     
     // Contact Section
     contactTitle: "Contáctanos",
